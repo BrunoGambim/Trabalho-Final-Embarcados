@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/boardListFragment">
+    <fragment
+        android:id="@+id/boardListFragment"
+        android:name="com.example.embarcados.presentation.views.BoardListFragment"
+        android:label="EMBARCADOS"
+        tools:layout="@layout/fragment_board_list_" >
+
+        <action
+            android:id="@+id/action_boardListFragment_to_boardConfigFragment"
+            app:destination="@id/boardConfigFragment"
+            >
+            <argument
+                android:name="id"
+                app:argType="string"
+                android:defaultValue="" />
+        </action>
+
+        <action
+            android:id="@+id/action_boardListFragment_to_editUsernameFragment"
+            app:destination="@id/editUsernameFragment">
+            <argument
+                android:name="username"
+                app:argType="string"
+                android:defaultValue="username" />
+        </action>
+
+        <action
+            android:id="@+id/action_boardListFragment_to_addBoardFragment"
+            app:destination="@id/addBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boardConfigFragment"
+        android:name="com.example.embarcados.presentation.views.BoardConfigFragment"
+        android:label="EMBARCADOS"
+        tools:layout="@layout/fragment_board_config" >
+        <action
+            android:id="@+id/action_boardConfigFragment_to_addRFIDFragment"
+            app:destination="@id/addRFIDFragment" >
+            <argument
+                android:name="boardName"
+                app:argType="string"
+                android:defaultValue="" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/editUsernameFragment"
+        android:name="com.example.embarcados.presentation.views.EditUsernameFragment"
+        android:label="EMBARCADOS"
+        tools:layout="@layout/fragment_edit_username" />
+    <fragment
+        android:id="@+id/addBoardFragment"
+        android:name="com.example.embarcados.presentation.views.AddBoardFragment"
+        android:label="EMBARCADOS"
+        tools:layout="@layout/fragment_add_board" />
+    <fragment
+        android:id="@+id/addRFIDFragment"
+        android:name="com.example.embarcados.presentation.views.AddRFIDFragment"
+        android:label="EMBARCADOS"
+        tools:layout="@layout/fragment_add_r_f_i_d" />
+</navigation>
